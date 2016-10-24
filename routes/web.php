@@ -19,5 +19,8 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index');
-    Route::resource('backend/articles','Backend\ArticleController',['as' => 'backend']);
+    Route::group(['as' => 'backend.','namespace' => 'Backend','prefix'=>'backend/'],function(){
+        Route::resource('articles','ArticleController');
+        Route::resource('mottoes','MottoController');
+    });
 });
