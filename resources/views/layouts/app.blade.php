@@ -9,7 +9,7 @@
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/select2/4.0.2/css/select2.min.css" rel="stylesheet">
 
-    <link href="{{url('css/AdminLTE.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/AdminLTE.min.css')}}" rel="stylesheet">
     <link href="//cdn.bootcss.com/admin-lte/2.3.3/css/skins/_all-skins.min.css" rel="stylesheet">
 
     <!-- Ionicons -->
@@ -146,7 +146,7 @@
     <script src="//cdn.bootcss.com/iCheck/1.0.2/icheck.min.js"></script>
 
     <!-- AdminLTE App -->
-    <script src="//cdn.bootcss.com/admin-lte/2.3.3/js/app.min.js"></script>
+    <script src="//cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
 
     @yield('scripts')
 </body>
