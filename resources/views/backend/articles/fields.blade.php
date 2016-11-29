@@ -4,6 +4,18 @@
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Keywords Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('keywords', 'Keywords:') !!}
+    {!! Form::text('keywords', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Summary Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('summary', 'Summary:') !!}
+    {!! Form::text('summary', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Text Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('text', 'Text:') !!}

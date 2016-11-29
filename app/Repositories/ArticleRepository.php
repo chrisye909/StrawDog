@@ -12,7 +12,8 @@ class ArticleRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'title',
-        'text'
+        'keywords',
+        'summary'
     ];
 
     /**

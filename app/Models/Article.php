@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Article
@@ -12,17 +11,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Article extends Model
 {
-    use SoftDeletes;
 
     public $table = 'articles';
-    
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
         'title',
-        'text'
+        'keywords',
+        'summary',
+        'text',
     ];
 
     /**
@@ -32,6 +31,8 @@ class Article extends Model
      */
     protected $casts = [
         'title' => 'string',
+        'keywords' => 'string',
+        'summary' => 'string',
         'text' => 'string'
     ];
 
@@ -41,9 +42,9 @@ class Article extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
-        'text' => 'required'
+        'title' => 'required|string:255',
+        'text' => 'required',
+        'keywords' => 'string:255',
+        'summary' => 'string:255',
     ];
-
-    
 }

@@ -1,14 +1,16 @@
 <table class="table table-responsive" id="articles-table">
     <thead>
         <th>Title</th>
-        <th>Text</th>
+        <th>Keywords</th>
+        <th>Summary</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($articles as $article)
         <tr>
             <td>{!! $article->title !!}</td>
-            <td>{!! $article->text !!}</td>
+            <td>{!! $article->keywords !!}</td>
+            <td>{!! $article->summary !!}</td>
             <td>
                 {!! Form::open(['route' => ['backend.articles.destroy', $article->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
