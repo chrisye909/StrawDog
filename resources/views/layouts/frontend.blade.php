@@ -3,120 +3,63 @@
 <head>
     <title>Straw Dog</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html {
-            font-size: 10px;
             height: 100%;
         }
 
         body {
             height: 100%;
-            font-weight: 300;
-            letter-spacing: 0.05rem;
         }
 
-        #wrap {
-            min-width: 120rem;
+        .wrap {
             min-height: 100%;
             height: auto !important;
             height: 100%;
-            margin: 0 auto -5rem;;/*margin-bottom的负值等于footer高度*/
+            margin: 0 auto -50px;/*margin-bottom的负值等于footer高度*/
         }
 
-        .push,#footer {
-            height: 5rem;
-            clear:both;
-        }
-
-        #footer {
+        footer {
             text-align: center;
-            font-size: 1.6rem;
-        }
-
-        #navigation {
-            height: 18rem;
-            padding: 4rem 3rem 4rem 3rem;
-            border-bottom:1px dashed #adadae;
-        }
-
-        #navigation > a {
-            font-weight: 400;
-            font-size: 3.2rem;
-            color: #4B4B4B;
-        }
-
-        #navigation > p {
-            margin-top: 1rem;
-            font-size: 1.8rem;
-            font-style: italic;
-            color: #ADADAE;
+            height: 50px;
         }
 
         a:hover {
             color: black;
             text-decoration: none;
         }
-
+-
         a:focus {
             color: black;
             text-decoration: none;
         }
-
-        .feed-list {
-        width: 120rem;
-        padding-top: 10rem;
-        height: 100%;
-        }
-
-        .feed-item {
-            width: 70rem;
-            margin: 0 25rem 15rem 25rem;
-        }
-
-        .feed-title {
-            font-size: 3rem;
-            text-align: center;
-        }
-
-        .feed-title > a {
-            color: black;
-        }
-
-        .feed-title > a:hover {
-            color: #137ADE;
-        }
-
-        .feed-ext {
-            font-size: 1.8rem;
-            color: #ADADAE;
-            text-align: center;
-        }
-
-        .feed-text {
-            text-align: left;
-            font-size: 1.6rem;
-            line-height: 2.5rem;
-            margin: 2rem 0 0 0;
-        }
-
-        .feed-more {
-            float: right;
-            font-size: 1.6rem;
-            color: #ADADAE;
-        }
-
-        .feed-more:hover {
-            font-weight: 400;
-            color: #137ADE;
-        }
         </style>
 </head>
 <body>
-    <div id="wrap">
-        <nav id="navigation" class="container-fluid">
-            <a href="{{url('/')}}">Straw Dog</a>
-            <p>keep it simple,keep it stupid</p>
+    <div class="wrap">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <a class="navbar-brand" href="{!! route('welcome') !!}">Straw Dog</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{!! route('welcome') !!}">首页</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
         </nav>
 
         @yield('main')
@@ -124,14 +67,25 @@
         <div class="push"><!-- push footer to the bottom of the viewport --></div>
     </div>
 
-    <footer id="footer" class="container-fluid">
+    <footer class="container">
         <span>
-            &copy; Chris Ye. Since Sep 12th,2015. Online 310 days.
+            &copy; Chris Ye. Since Sep 12th, 2015. Online <span id="time"></span> days.
         </span>
+        <div style="display:none">
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1256925856'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256925856%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </div>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <script>
+        var start = 1441987200;
+        var timenow = Date.parse(new Date())/1000;
+        var day = (timenow - start)/(24*3600);
+        $('#time').html(parseInt(day));
+    </script>
 </body>
 </html>
