@@ -18,12 +18,14 @@
     <br>
     <div class="row">
         <div class="article col-md-8">
-            <span>
-                <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
-            </span>
-            <span class="pull-right">
-                <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->formated_created_at !!}
-            </span>
+            <div class="text-muted">
+                <span>
+                    <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
+                </span>
+                <span class="pull-right">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->formated_created_at !!}
+                </span>
+            </div>
             <div class="clearfix"></div>
             <hr class="article-border">
             <div class="article-text">

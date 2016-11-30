@@ -48,9 +48,7 @@ class ArticleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('Article not found');
-
-            return redirect(route('backend.articles.index'));
+            return redirect(route('welcome'));
         }
 
         return view('article')->with('article', $article);
