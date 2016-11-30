@@ -15,9 +15,9 @@ Route::get('/', function(){
     return redirect(route('welcome'));
 });
 
-Route::get('/index', 'ArticleController@index')->name('welcome');
+Route::get('/index.html', 'ArticleController@index')->name('welcome');
 
-Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
+Route::get('/article-{id}.html', 'ArticleController@show')->name('article.show');
 
 Auth::routes();
 
