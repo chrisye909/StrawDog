@@ -74,6 +74,8 @@
             line-height: 1.7;
         }
         </style>
+
+        @yield('css')
 </head>
 <body>
     <div class="wrap">
@@ -124,5 +126,6 @@
         var day = (timenow - start)/(24*3600);
         $('#time').html(parseInt(day));
     </script>
+    @yield('scripts')
 </body>
 </html>

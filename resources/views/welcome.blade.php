@@ -20,14 +20,12 @@
                         <a href="{!! route('article.show',$article->id) !!}">{!! $article->title !!}</a>
                     </h3>
                     <p class="article-summary">{!! $article->summary !!}</p>
-                    <div  class="pull-right">
-                        <span>
-                            <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
-                        </span>
-                        <span>
-                            <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->created_at !!}
-                        </span>
-                    </div>
+                    <span>
+                        <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
+                    </span>
+                    <span class="pull-right">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->created_at !!}
+                    </span>
                     <div class="clearfix"></div>
                     <hr class="article-border">
                 </div>
