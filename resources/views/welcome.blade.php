@@ -1,33 +1,39 @@
 @extends('layouts.frontend')
 
-@section('css')
-<style type="text/css">
-</style>
-@endsection
-    <style type="text/css">
-        .article-block-border {
-            border-bottom: 1px dashed gray;
-        }
-    </style>
 @section('main')
 <div class="container">
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
             <div class="jumbotron" style="background-color: white;">
-                <h2>Keep it simple, keep it stupied!</h2>
+                <?php $motto = App\Models\Motto::all()->random() ?>
+                <h2>{!! $motto->content !!}</h2>
+                <h2 class="pull-right" style="margin-top: 0px;"><small> -- {!! $motto->source !!}</small></h2>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8">
-            @foreach($articles as $article)
             <div class="article-block">
-                <h3><a href="{!! route('article.show',$article->id) !!}">{!! $article['title'] !!}</a></h3>
-                <p>{!! $article['summary'] !!}</p>
-                <p>{!! $article['created_at'] !!}</p>
-                <hr class="article-block-border">
+                @foreach($articles as $article)
+                <div class="article-piece">
+                    <h3>
+                        <a href="{!! route('article.show',$article->id) !!}">{!! $article->title !!}</a>
+                    </h3>
+                    <p class="article-summary">{!! $article->summary !!}</p>
+                    <div  class="pull-right">
+                        <span>
+                            <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
+                        </span>
+                        <span>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->created_at !!}
+                        </span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="article-border">
+                </div>
+                @endforeach
+                <div class="article-paginate">{!! $articles->links() !!}</div>
             </div>
-            @endforeach
         </div>
         <div class="col-md-4 visible-md-block visible-lg-block">
             <div class="panel-body" style="padding-top: 0px;">

@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'ArticleController@index')->name('welcome');
+Route::get('/', function(){
+    return redirect(route('welcome'));
+});
+
+Route::get('/index', 'ArticleController@index')->name('welcome');
 
 Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
 

@@ -2,7 +2,6 @@
     <thead>
         <th>Title</th>
         <th>Keywords</th>
-        <th>Summary</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -10,7 +9,6 @@
         <tr>
             <td>{!! $article->title !!}</td>
             <td>{!! $article->keywords !!}</td>
-            <td>{!! $article->summary !!}</td>
             <td>
                 {!! Form::open(['route' => ['backend.articles.destroy', $article->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

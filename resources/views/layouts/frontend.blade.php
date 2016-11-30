@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         html {
             height: 100%;
@@ -13,18 +14,24 @@
 
         body {
             height: 100%;
+            font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
         }
 
         .wrap {
             min-height: 100%;
             height: auto !important;
             height: 100%;
-            margin: 0 auto -50px;/*margin-bottom的负值等于footer高度*/
+            margin: 0 auto -100px;/*margin-bottom的负值等于footer高度*/
+        }
+
+        .push,footer {
+            height: 100px;
+            clear:both;
         }
 
         footer {
             text-align: center;
-            height: 50px;
+            line-height:100px;
         }
 
         a:hover {
@@ -35,6 +42,36 @@
         a:focus {
             color: black;
             text-decoration: none;
+        }
+
+        li.active > span {
+            border-color: black;
+            background-color: black;
+        }
+
+        .article-border {
+            border-bottom: 1px dashed gray;
+            margin: 10px 0px 10px 0px;
+        }
+
+        .article-summary {
+            font-size: 16px;
+            color: #2f2f2f;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 1.7;
+        }
+
+        .article {
+        }
+
+        .article-text {
+            margin: 20px 0px 20px 0px;
+            font-size: 16px;
+            color: #2f2f2f;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 1.7;
         }
         </style>
 </head>
