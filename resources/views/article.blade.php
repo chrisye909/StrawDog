@@ -31,7 +31,7 @@
             </div>
             <hr class="article-border">
             <br>
-            <div class="row comment" style="padding-left: 13px;padding-right: 13px;">
+            <div class="row comment visible-md-block visible-lg-block" style="padding-left: 13px;padding-right: 13px;">
                 <div class="ds-thread" data-thread-key="{!! $article->id !!}" data-title="{!! $article->title !!}" data-url="{!! route('article.show',$article->id) !!}"></div>
                 <script type="text/javascript">
                 var duoshuoQuery = {short_name:"chrispace"};
