@@ -14,21 +14,20 @@
 
 @section('main')
 <div class="container">
+    <br>
+    <br>
     <div class="row">
-        <div class="article col-md-8 col-md-offset-2">
-            <br>
+        <div class="article col-md-8">
             <span>
                 <i class="fa fa-key" aria-hidden="true"></i> {!! $article->keywords !!}
             </span>
             <span class="pull-right">
-                <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->created_at !!}
+                <i class="fa fa-clock-o" aria-hidden="true"></i> {!! $article->formated_created_at !!}
             </span>
             <div class="clearfix"></div>
             <hr class="article-border">
             <div class="article-text">
-                <p>
-                    {!! Markdown::convertToHtml($article->text) !!}
-                </p>
+                {!! Markdown::convertToHtml($article->text) !!}
             </div>
             <hr class="article-border">
             <br>
@@ -46,6 +45,7 @@
                 </script>
             </div>
         </div>
+        @include('sidebar')
     </div>
 </div>
 @endsection

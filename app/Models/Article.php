@@ -47,4 +47,9 @@ class Article extends Model
         'keywords' => 'string:255',
         'summary' => 'string:255',
     ];
+
+    public function getFormatedCreatedAtAttribute()
+    {
+        return date('M d, Y',strtotime($this->attributes['created_at']));
+    }
 }
