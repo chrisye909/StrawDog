@@ -1,5 +1,13 @@
 @extends('layouts.frontend')
 
+@section('keywords')
+<meta name="keywords" content="{!! str_replace(' ', ',', $article->keywords) !!}">
+@endsection
+
+@section('description')
+<meta name="description" content="{!! $article->summary !!}">
+@endsection
+
 @section('css')
 <link href="//cdn.bootcss.com/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet">
 @endsection
@@ -47,7 +55,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript">
     $(document).ready(function() {
-      $('pre').each(function(i, block) {
+      $('.article-text pre').each(function(i, block) {
         hljs.highlightBlock(block);
       });
     });

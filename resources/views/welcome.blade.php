@@ -1,5 +1,13 @@
 @extends('layouts.frontend')
 
+@section('keywords')
+<meta name="keywords" content="稻草狗,博客,strawdog">
+@endsection
+
+@section('description')
+<meta name="description" content="稻草狗的个人博客">
+@endsection
+
 @section('main')
 <div class="container">
     <div class="row">
