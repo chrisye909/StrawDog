@@ -183,6 +183,7 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
     ],
 
     /*
@@ -197,7 +198,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -233,6 +233,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
+        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
     ],
-
 ];

@@ -31,7 +31,7 @@
             color: black;
             text-decoration: none;
         }
--
+
         a:focus {
             color: black;
             text-decoration: none;

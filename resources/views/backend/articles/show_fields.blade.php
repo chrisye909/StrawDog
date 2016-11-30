@@ -13,7 +13,11 @@
 <!-- Text Field -->
 <div class="form-group">
     {!! Form::label('text', 'Text:') !!}
-    <p>{!! $article->text !!}</p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {!! Markdown::convertToHtml($article->text) !!}
+        </div>
+    </div>
 </div>
 
 <!-- Created At Field -->

@@ -15,7 +15,9 @@
         </div>
         <hr>
         <div class="text">
-            <p>{!! $article->text !!}</p>
+            <p>
+                {!! Markdown::convertToHtml($article->text) !!}
+            </p>
         </div>
     </div>
     <hr>
