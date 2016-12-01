@@ -12,9 +12,9 @@
             <td>
                 {!! Form::open(['route' => ['backend.mottoes.destroy', $motto->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    <a href="{!! route('backend.mottoes.show', [$motto->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('backend.mottoes.edit', [$motto->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    <a href="{!! route('backend.mottoes.show', [$motto->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i> View</a>
+                    <a href="{!! route('backend.mottoes.edit', [$motto->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i> Edit</a>
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

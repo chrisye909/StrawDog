@@ -2,18 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GPlay Subpackage</title>
 
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/select2/4.0.2/css/select2.min.css" rel="stylesheet">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link href="{{asset('css/AdminLTE.min.css')}}" rel="stylesheet">
-    <link href="//cdn.bootcss.com/admin-lte/2.3.3/css/skins/_all-skins.min.css" rel="stylesheet">
+    @include('layouts.css')
 
-    <!-- Ionicons -->
-    <link href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -24,8 +20,8 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
-                <b>InfyOm</b>
+            <a href="{{url('home')}}" class="logo" style="padding: 0px;">
+                <img src="{!! asset('img/logo_top.png') !!}">
             </a>
 
             <!-- Header Navbar -->
@@ -42,7 +38,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                                <img src="{!! asset('img/logo.jpg') !!}"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -50,8 +46,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
-                                         class="img-circle" alt="User Image"/>
+                                    <img src="{!! asset('img/logo.jpg') !!}" class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
@@ -59,13 +54,9 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
                                     <div class="pull-right">
                                         <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Sign out
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
                                         </a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -139,14 +130,7 @@
     </div>
     @endif
 
-    <!-- jQuery 2.1.4 -->
-    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="//cdn.bootcss.com/select2/4.0.2/js/select2.min.js"></script>
-    <script src="//cdn.bootcss.com/iCheck/1.0.2/icheck.min.js"></script>
-
-    <!-- AdminLTE App -->
-    <script src="//cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
+@include('layouts.scripts')
 
     @yield('scripts')
 </body>

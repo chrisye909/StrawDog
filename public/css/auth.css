@@ -1,0 +1,50 @@
+body {
+    min-width: 1280px;
+    height: 985px;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+div.content {
+    background: url('/img/loginbg.jpg') center top no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+div.login-box {
+    margin-top: 155px;
+    margin-right: 10%;
+    min-width: 440px;
+}
+
+div.login-box-body {
+    height: 400px;
+}
+
+p.login-box-msg {
+    margin-top: 20px;
+}
+
+.login-page form {
+    height: 240px;
+}
+
+.login-box-bottom {
+    height: 40px;
+}
+
+.login-page span.help-block {
+    margin-bottom: 5px;
+}
+
+.login-page .control-label {
+    padding-right: 0px;
+}
+
+.login-page .form-group {
+    margin-bottom: 0px;
+}
+
+div.placeholder {
+    height: 30px;
+}

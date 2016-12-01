@@ -11,7 +11,6 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('backend.mottoes.show_fields')
-                    <a href="{!! route('backend.mottoes.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>
