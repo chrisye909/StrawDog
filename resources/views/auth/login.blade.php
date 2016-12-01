@@ -57,14 +57,6 @@
                 </div>
             </div>
         </form>
-        <div class="row login-box-bottom">
-            <div class="col-sm-offset-2 col-sm-4">
-                <a href="{{ url('/password/reset') }}">忘记密码？</a>
-            </div>
-            <div class="col-sm-5">
-                <a href="{{ url('/register') }}" class="text-center pull-right">注册新用户</a>
-            </div>
-        </div>
     </div>
     <!-- /.login-box-body -->
 </div>
@@ -72,8 +64,6 @@
 </div>
 
 @include('layouts.scripts')
-
-<script src="{!! asset('js/auth.js') !!}"></script>
 
 </body>
 </html>

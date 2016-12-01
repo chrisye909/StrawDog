@@ -19,7 +19,9 @@ Route::get('/index.html', 'ArticleController@index')->name('welcome');
 
 Route::get('/article-{id}.html', 'ArticleController@show')->name('article.show');
 
-Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index');

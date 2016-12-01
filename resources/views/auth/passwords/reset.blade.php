@@ -85,7 +85,5 @@
 
 @include('layouts.scripts')
 
-<script src="{!! asset('js/auth.js') !!}"></script>
-
 </body>
 </html>
