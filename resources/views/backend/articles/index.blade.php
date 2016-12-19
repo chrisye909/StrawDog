@@ -18,5 +18,6 @@
                     @include('backend.articles.table')
             </div>
         </div>
+        {!! $articles->links() !!}
     </div>
 @endsection

@@ -30,7 +30,7 @@ class ArticleController extends AppBaseController
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
-        $articles = $this->articleRepository->all();
+        $articles = $this->articleRepository->paginate();
 
         return view('backend.articles.index')
             ->with('articles', $articles);
