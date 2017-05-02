@@ -32,20 +32,6 @@
                 {!! Markdown::convertToHtml($article->text) !!}
             </div>
             <hr class="article-border">
-            <br>
-            <div class="row comment visible-md-block visible-lg-block" style="padding-left: 13px;padding-right: 13px;">
-                <div class="ds-thread" data-thread-key="{!! $article->id !!}" data-title="{!! $article->title !!}" data-url="{!! route('article.show',$article->id) !!}"></div>
-                <script type="text/javascript">
-                var duoshuoQuery = {short_name:"chrispace"};
-                    (function() {
-                        var ds = document.createElement('script');
-                        ds.type = 'text/javascript';ds.async = true;
-                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
-                        ds.charset = 'UTF-8';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                    })();
-                </script>
-            </div>
         </div>
         @include('sidebar')
     </div>
